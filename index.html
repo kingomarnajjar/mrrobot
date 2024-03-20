@@ -49,11 +49,27 @@
         <textarea id="outputCode" placeholder="Output" rows="5"></textarea>
     </div>
 
+    <h2>Swap Characters</h2>
+    <div class="container">
+        <input type="text" id="inputText" placeholder="Enter text here">
+        <button onclick="swapCharacters()">Swap Characters</button>
+        <textarea id="outputText" placeholder="Output" rows="5"></textarea>
+    </div>
+
     <script>
         function replaceSemicolons() {
             let inputCode = document.getElementById('inputCode').value;
             let outputCode = inputCode.replace(/;/g, ';');
             document.getElementById('outputCode').value = outputCode;
+        }
+
+        function swapCharacters() {
+            let inputText = document.getElementById('inputText').value;
+            let outputText = inputText
+                .replace(/o/g, '0')
+                .replace(/l/g, 'I')
+                .replace(/1/g, 'l');
+            document.getElementById('outputText').value = outputText;
         }
     </script>
 </body>
