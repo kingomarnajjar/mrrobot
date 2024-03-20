@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The invisible Greek Fuckwit: Replace Semicolons with Greek Question Marks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #ebe6e6e5;
+        }
+        input, textarea, button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input, button {
+            width: calc(100% - 22px);
+        }
+        textarea {
+            width: calc(100% - 22px);
+            resize: vertical;
+        }
+        button {
+            background-color: #ff00ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #2fff00;
+        }
+        .container {
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h2> The Invisible Greek Fuckwit</h2>
+    <div class="container">
+        <input type="text" id="inputCode" placeholder="Enter code with semicolons">
+        <button onclick="replaceSemicolons()">Convert</button>
+        <textarea id="outputCode" placeholder="Output" rows="5"></textarea>
+    </div>
+
+    <script>
+        function replaceSemicolons() {
+            let inputCode = document.getElementById('inputCode').value;
+            let outputCode = inputCode.replace(/;/g, ';');
+            document.getElementById('outputCode').value = outputCode;
+        }
+    </script>
+</body>
+</html>
