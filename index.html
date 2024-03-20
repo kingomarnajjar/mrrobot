@@ -56,6 +56,23 @@
         <textarea id="outputText" placeholder="Output" rows="5"></textarea>
     </div>
 
+    <h2>Zero Width</h2>
+    <div class="container">
+        <label for="inputTextZeroWidth">Enter Text:</label>
+        <input type="text" id="inputTextZeroWidth" placeholder="Type something...">
+        <button onclick="insertZeroWidthSpaces()">Insert Zero-Width Spaces</button>
+        <textarea id="outputTextZeroWidth" rows="4" cols="50" placeholder="Output with zero-width spaces..."></textarea>
+    </div>
+
+    <h2>Homoglyph</h2>
+    <div class="container">
+        <label for="inputTextHomoglyph">Enter Text:</label>
+        <input type="text" id="inputTextHomoglyph" placeholder="Type something...">
+        <button onclick="substituteHomoglyphs()">Substitute Homoglyphs</button>
+        <textarea id="outputTextHomoglyph" rows="4" cols="50" placeholder="Output with homoglyphs..."></textarea>
+    </div>
+
+
     <script>
         function replaceSemicolons() {
             let inputCode = document.getElementById('inputCode').value;
@@ -70,6 +87,26 @@
                 .replace(/l/g, 'I')
                 .replace(/1/g, 'l');
             document.getElementById('outputText').value = outputText;
+        }
+
+        function insertZeroWidthSpaces() {
+            let inputText = document.getElementById('inputTextZeroWidth').value;
+            // Insert a zero-width space after every character
+            let outputText = inputText.split('').join('\u200B');
+            document.getElementById('outputTextZeroWidth').value = outputText;
+        }
+
+        function substituteHomoglyphs() {
+            let inputText = document.getElementById('inputTextHomoglyph').value;
+            // Substitute specific characters with their homoglyphs
+            let outputText = inputText
+                .replace(/a/g, 'а') // Latin 'a' to Cyrillic 'а'
+                .replace(/e/g, 'е') // Latin 'e' to Cyrillic 'е'
+                .replace(/o/g, 'о') // Latin 'o' to Cyrillic 'о'
+                .replace(/p/g, 'р') // Latin 'p' to Cyrillic 'р'
+                .replace(/c/g, 'с') // Latin 'c' to Cyrillic 'с'
+                .replace(/y/g, 'у'); // Latin 'y' to Cyrillic 'у'
+            document.getElementById('outputTextHomoglyph').value = outputText;
         }
     </script>
 </body>
