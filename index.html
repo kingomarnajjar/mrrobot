@@ -116,7 +116,12 @@
             document.getElementById('outputTextHomoglyph').value = outputText;
         }
 
-        
+        function insertRLOCharacter() {
+            let inputText = document.getElementById('inputTextRLO').value;
+            // Insert the RLO character at the beginning of the text
+            let outputText = '\u202E' + inputText;
+            document.getElementById('outputTextRLO').value = outputText;
+        }
     </script>
 </body>
 </html>
