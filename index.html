@@ -49,14 +49,14 @@
         <textarea id="outputCode" placeholder="Output" rows="5"></textarea>
     </div>
 
-    <h2>Swap Characters</h2>
+    <h2>The Swinger: Couple Swapping Characters</h2>
     <div class="container">
         <input type="text" id="inputText" placeholder="Enter text here">
         <button onclick="swapCharacters()">Swap Characters</button>
         <textarea id="outputText" placeholder="Output" rows="5"></textarea>
     </div>
 
-    <h2>Zero Width</h2>
+    <h2>Zero Gravity Width</h2>
     <div class="container">
         <label for="inputTextZeroWidth">Enter Text:</label>
         <input type="text" id="inputTextZeroWidth" placeholder="Type something...">
@@ -64,12 +64,19 @@
         <textarea id="outputTextZeroWidth" rows="4" cols="50" placeholder="Output with zero-width spaces..."></textarea>
     </div>
 
-    <h2>Homoglyph</h2>
+    <h2>Cyrillian Homoglyph</h2>
     <div class="container">
         <label for="inputTextHomoglyph">Enter Text:</label>
         <input type="text" id="inputTextHomoglyph" placeholder="Type something...">
         <button onclick="substituteHomoglyphs()">Substitute Homoglyphs</button>
         <textarea id="outputTextHomoglyph" rows="4" cols="50" placeholder="Output with homoglyphs..."></textarea>
+    </div>
+
+    <h2>Left brain shit</h2>
+        <label for="inputTextRLO">Enter Text:</label>
+        <input type="text" id="inputTextRLO" placeholder="Type something...">
+        <button onclick="insertRLOCharacter()">Insert RLO Character</button>
+        <textarea id="outputTextRLO" rows="4" cols="50" placeholder="Output with RLO..."></textarea>
     </div>
 
 
@@ -108,6 +115,8 @@
                 .replace(/y/g, 'у'); // Latin 'y' to Cyrillic 'у'
             document.getElementById('outputTextHomoglyph').value = outputText;
         }
+
+        
     </script>
 </body>
 </html>
